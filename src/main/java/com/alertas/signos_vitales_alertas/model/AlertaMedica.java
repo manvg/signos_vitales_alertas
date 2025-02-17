@@ -16,7 +16,7 @@ public class AlertaMedica {
     @Column(name = "id_alerta_medica")
     private int idAlertaMedica;
 
-   @Column(name = "nombre_paciente", nullable = false, length = 100)
+    @Column(name = "nombre_paciente", nullable = false, length = 100)
     private String nombrePaciente;
 
     @Column(name = "ritmo_cardiaco", nullable = false)
@@ -41,7 +41,18 @@ public class AlertaMedica {
         this.fechaRegistro = LocalDateTime.now();
     }
 
-    public Integer getId() {
+    public AlertaMedica(String nombrePaciente, int ritmoCardiaco, double temperatura,
+                        int presionSistolica, int presionDiastolica, String observacion) {
+        this.nombrePaciente = nombrePaciente;
+        this.ritmoCardiaco = ritmoCardiaco;
+        this.temperatura = temperatura;
+        this.presionSistolica = presionSistolica;
+        this.presionDiastolica = presionDiastolica;
+        this.observacion = observacion;
+        this.fechaRegistro = LocalDateTime.now();
+    }
+
+    public Integer getIdAlertaMedica() {
         return idAlertaMedica;
     }
 
