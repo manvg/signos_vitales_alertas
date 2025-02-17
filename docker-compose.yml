@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  alertas-backend-app:
+    build: .
+    container_name: alertas-backend-app
+    ports:
+      - "8083:8083"
+    networks:
+      - kafka_kafka-net
+    restart: always
+
+networks:
+  kafka_kafka-net:
+    external: true
